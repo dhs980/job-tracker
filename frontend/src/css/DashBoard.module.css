@@ -1,0 +1,321 @@
+.dashboardPage {
+  max-width: 1140px;
+  margin: 24px auto 72px;
+  padding: 0 16px;
+  display: grid;
+  gap: 18px;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) auto;
+  gap: 24px;
+  padding: 32px;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at top right, rgba(232, 104, 59, 0.2), transparent 28%),
+    linear-gradient(180deg, rgba(255, 250, 244, 0.97), rgba(245, 235, 223, 0.96));
+  border: 1px solid rgba(186, 162, 140, 0.38);
+  box-shadow: 0 26px 48px rgba(69, 48, 31, 0.12);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -34px;
+  bottom: -48px;
+  width: 180px;
+  height: 180px;
+  border-radius: 30px;
+  background: rgba(28, 43, 58, 0.08);
+  transform: rotate(18deg);
+}
+
+.heroCopy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 14px;
+}
+
+.eyebrow,
+.panelEyebrow,
+.statLabel,
+.monthBadge span {
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.eyebrow,
+.panelEyebrow {
+  color: #9f5332;
+}
+
+.pageTitle {
+  max-width: 11ch;
+  font-size: clamp(2.7rem, 6vw, 4.3rem);
+  line-height: 0.94;
+  letter-spacing: -0.06em;
+  color: #1c252d;
+}
+
+.pageSubtitle {
+  max-width: 660px;
+  font-size: 1rem;
+  color: #51626f;
+}
+
+.monthBadge {
+  position: relative;
+  z-index: 1;
+  min-width: 220px;
+  align-self: start;
+  padding: 20px 22px;
+  border-radius: 24px;
+  background: rgba(28, 43, 58, 0.94);
+  color: var(--text-light);
+  box-shadow: 0 20px 34px rgba(28, 43, 58, 0.2);
+}
+
+.monthBadge span {
+  color: rgba(255, 247, 239, 0.72);
+}
+
+.monthBadge strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.6rem;
+  letter-spacing: -0.04em;
+}
+
+.statusCard {
+  padding: 18px 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(186, 162, 140, 0.36);
+  box-shadow: 0 16px 30px rgba(70, 50, 36, 0.08);
+  color: #475866;
+}
+
+.errorCard {
+  color: #a32b2b;
+  background: #fff2f2;
+  border-color: rgba(227, 116, 116, 0.35);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.statCard {
+  padding: 22px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(186, 162, 140, 0.34);
+  box-shadow: 0 16px 28px rgba(70, 50, 36, 0.08);
+}
+
+.statLabel {
+  color: #7b6656;
+}
+
+.statValue {
+  display: block;
+  margin-top: 14px;
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: #1f313e;
+}
+
+.statHint {
+  margin-top: 12px;
+  color: #5f707d;
+  font-size: 0.95rem;
+}
+
+.chartGrid {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1.28fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.panel {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  border-radius: 30px;
+  box-shadow: 0 24px 40px rgba(53, 41, 32, 0.1);
+}
+
+.panelHeader {
+  margin-bottom: 18px;
+}
+
+.panelTitle {
+  margin-top: 8px;
+  font-size: 1.7rem;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.panelDescription {
+  margin-top: 10px;
+  color: #546572;
+  max-width: 34ch;
+}
+
+.piePanel {
+  background:
+    radial-gradient(circle at top right, rgba(232, 104, 59, 0.14), transparent 30%),
+    linear-gradient(180deg, rgba(255, 252, 247, 0.98), rgba(245, 238, 230, 0.96));
+  border: 1px solid rgba(186, 162, 140, 0.36);
+}
+
+.barPanel {
+  background:
+    radial-gradient(circle at top right, rgba(240, 181, 77, 0.16), transparent 25%),
+    linear-gradient(180deg, #22384b 0%, #182833 100%);
+  border: 1px solid rgba(63, 87, 105, 0.72);
+  color: var(--text-light);
+}
+
+.barPanel .panelEyebrow {
+  color: rgba(255, 214, 152, 0.92);
+}
+
+.barPanel .panelDescription {
+  color: rgba(245, 240, 233, 0.74);
+}
+
+.barHeader {
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.monthControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.monthButton {
+  border: none;
+  border-radius: 14px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text-light);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.monthButton:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.monthLabel {
+  min-width: 148px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 248, 242, 0.9);
+  text-align: center;
+  font-weight: 700;
+}
+
+.chartWrap {
+  position: relative;
+  min-height: 320px;
+}
+
+.chartWrapTall {
+  min-height: 360px;
+}
+
+.chartWrap :global(canvas) {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.emptyChart {
+  min-height: 320px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 24px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.52);
+  color: #566673;
+}
+
+.emptyChartDark {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 247, 239, 0.8);
+}
+
+@media (max-width: 960px) {
+  .hero,
+  .chartGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pageTitle {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboardPage {
+    margin-top: 16px;
+    padding: 0 12px;
+  }
+
+  .hero,
+  .panel {
+    padding: 22px 18px;
+    border-radius: 24px;
+  }
+
+  .monthBadge {
+    min-width: 0;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .barHeader,
+  .monthControls {
+    display: grid;
+  }
+
+  .monthLabel,
+  .monthButton {
+    width: 100%;
+  }
+
+  .chartWrap,
+  .chartWrapTall,
+  .emptyChart {
+    min-height: 280px;
+  }
+}

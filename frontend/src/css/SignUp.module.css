@@ -1,0 +1,200 @@
+.SignUp_Container1 {
+  min-height: calc(100dvh - 110px);
+  display: grid;
+  place-items: center;
+  padding: 24px 18px 40px;
+}
+
+.SignUp_Container2 {
+  width: min(500px, 100%);
+}
+
+.SignUp_Container3 {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  padding: 34px 28px 28px;
+  overflow: hidden;
+  background: rgba(248, 241, 232, 0.95);
+  border: 1px solid rgba(184, 164, 145, 0.5);
+  border-radius: 28px;
+  box-shadow: 0 24px 44px rgba(67, 48, 35, 0.12);
+}
+
+.SignUp_Container3::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: -46px;
+  width: 150px;
+  height: 150px;
+  border-radius: 34px;
+  background: rgba(36, 54, 68, 0.08);
+  transform: rotate(-20deg);
+}
+
+.eyebrow {
+  position: relative;
+  z-index: 1;
+  color: #a0502f;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.formHeader {
+  position: relative;
+  z-index: 1;
+}
+
+.formHeader h2 {
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: #1f2c36;
+}
+
+.formHeader p {
+  margin-top: 8px;
+  font-size: 0.98rem;
+  color: #5a6870;
+}
+
+.field {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 8px;
+  width: 100%;
+}
+
+.label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #31414d;
+}
+
+.passwordField {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  outline: none;
+  padding: 13px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(113, 131, 145, 0.22);
+  background: rgba(255, 255, 255, 0.78);
+  color: #1f2c36;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.input:hover,
+.input:focus {
+  border-color: rgba(224, 106, 60, 0.6);
+  background: #ffffff;
+}
+
+.input:focus {
+  box-shadow: 0 0 0 4px rgba(224, 106, 60, 0.14);
+}
+
+.input_pass {
+  padding-right: 46px;
+}
+
+.toggleButton {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.toggleIcon {
+  color: #7e8b94;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.toggleButton:hover .toggleIcon {
+  color: #243644;
+}
+
+.button {
+  position: relative;
+  z-index: 1;
+  min-height: 48px;
+  border: none;
+  border-radius: 16px;
+  color: #fff8f2;
+  background: linear-gradient(135deg, #243644 0%, #182632 100%);
+  box-shadow: 0 16px 28px rgba(24, 38, 50, 0.22);
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 30px rgba(24, 38, 50, 0.26);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.78;
+}
+
+.errorText {
+  position: relative;
+  z-index: 1;
+  padding: 10px 12px;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  color: #ab2222;
+  background: #fff0f0;
+  border: 1px solid #f6c2c2;
+}
+
+.switchText {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #5a6870;
+  font-size: 0.94rem;
+}
+
+.switchLink {
+  color: #243644;
+  font-weight: 800;
+}
+
+.switchLink:hover {
+  color: #cf562b;
+}
+
+@media (max-width: 640px) {
+  .SignUp_Container1 {
+    padding: 18px 12px 30px;
+  }
+
+  .SignUp_Container3 {
+    padding: 28px 20px 22px;
+    border-radius: 24px;
+  }
+}

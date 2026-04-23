@@ -1,0 +1,127 @@
+.JobCard_Container {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.JobCard_Container:hover {
+  transform: translateY(-2px);
+  border-color: #b8c9e1;
+  box-shadow: 0 18px 30px rgba(15, 23, 42, 0.12);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.companyName {
+  font-size: 1.02rem;
+  color: var(--text-primary);
+}
+
+.roleTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.statusBadge {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.statusSuccess {
+  color: #0a7a55;
+  background: #dcfce7;
+}
+
+.statusDanger {
+  color: #b42323;
+  background: #fee2e2;
+}
+
+.statusWarning {
+  color: #915f00;
+  background: #fef3c7;
+}
+
+.statusDefault {
+  color: #334155;
+  background: #e2e8f0;
+}
+
+.metaRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.89rem;
+  color: var(--text-secondary);
+}
+
+.metaRow strong {
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.notes {
+  min-height: 42px;
+  padding: 9px 10px;
+  border-radius: 10px;
+  background: #f7f9fd;
+  color: var(--text-secondary);
+  font-size: 0.86rem;
+}
+
+.actions {
+  margin-top: 4px;
+  display: flex;
+  gap: 8px;
+}
+
+.actionButton {
+  flex: 1;
+  height: 35px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.actionButton:hover {
+  transform: translateY(-1px);
+}
+
+.editButton:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary-hover);
+}
+
+.deleteButton:hover {
+  border-color: #f1b4b4;
+  color: #b42323;
+}

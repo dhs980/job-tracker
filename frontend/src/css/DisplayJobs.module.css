@@ -1,0 +1,137 @@
+.jobsPage {
+  max-width: 1140px;
+  margin: 24px auto 100px;
+  padding: 0 16px;
+  display: grid;
+  gap: 14px;
+}
+
+.jobsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.loadingBanner,
+.errorBanner,
+.emptyState {
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+}
+
+.loadingBanner {
+  color: var(--text-secondary);
+  background: #edf4ff;
+  border: 1px solid #d6e6ff;
+}
+
+.errorBanner {
+  color: #b92020;
+  background: #ffecec;
+  border: 1px solid #fecaca;
+}
+
+.emptyState {
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border: 1px dashed var(--border-color);
+  text-align: center;
+}
+
+.addButtonContainer {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  z-index: 1100;
+}
+
+.addButton {
+  width: 62px;
+  height: 62px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-hover) 100%
+  );
+  color: #ffffff;
+  box-shadow: 0 14px 24px rgba(22, 71, 207, 0.3);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.addButton:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 16px 30px rgba(22, 71, 207, 0.35);
+  filter: saturate(1.06);
+}
+
+.addButton:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.addIcon {
+  font-size: 42px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background: rgba(8, 15, 36, 0.56);
+  backdrop-filter: blur(4px);
+  z-index: 1200;
+}
+
+.dialog {
+  margin: 0;
+  width: min(94vw, 580px);
+  max-height: 92dvh;
+  border-radius: 18px;
+  background: transparent;
+  overflow: auto;
+  animation: fadeIn 0.25s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .jobsPage {
+    margin-top: 16px;
+    margin-bottom: 90px;
+    padding: 0 12px;
+  }
+
+  .addButtonContainer {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .addButton {
+    width: 56px;
+    height: 56px;
+  }
+
+  .addIcon {
+    font-size: 36px;
+  }
+}

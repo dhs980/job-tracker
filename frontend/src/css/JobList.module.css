@@ -1,0 +1,38 @@
+.Joblist_Container1 {
+  display: flex;
+  justify-content: center;
+}
+.Joblist_Container2 {
+  display: grid;
+  gap: 15px;
+  width: 30vh;
+}
+
+.input {
+  outline: none;
+  padding: 7px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  width: 200px;
+}
+.input:hover,
+.input:focus {
+  border: 3px solid var(--border-color);
+  cursor: text;
+}
+.input:focus {
+  box-shadow: 2px 2px 10px 1px var(--shadow-color);
+}
+.button {
+  cursor: pointer;
+  appearance: none;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 5px;
+  width: 70px;
+  height: 25px;
+  margin-top: 10px;
+}
+.button:hover {
+  background-color: var(--color-primary-hover);
+}
