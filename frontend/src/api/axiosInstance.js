@@ -1,7 +1,8 @@
 import axios from "axios";
+import { API_BASE_URL, buildApiUrl } from "./apiUrl";
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:3000/",
+  baseURL: API_BASE_URL,
   withCredentials: true,
 });
 axiosInstance.interceptors.request.use((config) => {
@@ -20,7 +21,7 @@ axiosInstance.interceptors.response.use(
       originalRequest._retry = true;
       try {
         const res = await axios.post(
-          "http://localhost:3000/auth/refresh",
+          buildApiUrl("auth/refresh"),
           {},
           {
             withCredentials: true,

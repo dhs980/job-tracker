@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router";
 
 import { AuthContext } from "../context/AuthContext";
+import { buildApiUrl } from "../api/apiUrl";
 
 import styles from "../css/SignUp.module.css";
 //react icons
@@ -29,7 +30,7 @@ function SignUp() {
     };
     try {
       const response = await axios.post(
-        "http://localhost:3000/auth/signup",
+        buildApiUrl("auth/signup"),
         signupData,
         { withCredentials: true },
       );

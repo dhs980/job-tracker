@@ -1,11 +1,10 @@
 import Button from "@mui/material/Button";
 import GoogleIcon from "@mui/icons-material/Google";
-import { useEffect } from "react";
-import axios from "axios";
+import { buildApiUrl } from "../api/apiUrl";
 
 function GLogin() {
   async function googleAuth() {
-    window.open("http://localhost:3000/auth/google", "_self");
+    window.open(buildApiUrl("auth/google"), "_self");
   }
   return (
     <Button
