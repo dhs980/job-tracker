@@ -1,6 +1,7 @@
 import { User } from "../model/userModel.js";
 import { catchAsync } from "../utils/catchAsync.js";
 import jwt from "jsonwebtoken";
+import { isProduction } from "../utils/runtimeConfig.js";
 
 export const loginUser = catchAsync(async (req, res) => {
   const { email, password } = req.body;
@@ -16,7 +17,7 @@ export const loginUser = catchAsync(async (req, res) => {
   await user.save({ validateBeforeSave: false });
   res.cookie("refreshToken", refreshToken, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: isProduction,
     maxAge: 7 * 24 * 60 * 60 * 1000,
   });
   res.status(200).json({ message: "loginsuccessful", token });
@@ -39,7 +40,7 @@ export const signUpUser = catchAsync(async (req, res) => {
   await newUser.save({ validateBeforeSave: false });
   res.cookie("refreshToken", refreshToken, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: isProduction,
     maxAge: 7 * 24 * 60 * 60 * 1000,
   });
   res.status(200).json({
@@ -72,7 +73,7 @@ export const refresh = catchAsync(async (req, res) => {
 
   res.cookie("refreshToken", newRefreshToken, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: isProduction,
     maxAge: 7 * 24 * 60 * 60 * 1000,
   });
   res.status(200).json({

@@ -10,12 +10,20 @@ import { protect } from "./middleware/authMiddleware.js";
 import applicationRouter from "./routes/applicationRouter.js";
 import cookieParser from "cookie-parser";
 import "./config/passport.js";
+import { FRONTEND_URLS } from "./utils/runtimeConfig.js";
 
 const app = express();
+const allowedOrigins = new Set(FRONTEND_URLS);
 
 app.use(
   cros({
-    origin: process.env.Domain || "http://localhost:5173",
+    origin(origin, callback) {
+      if (!origin || allowedOrigins.has(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new AppError("Not allowed by CORS", 403));
+    },
     credentials: true,
   }),
 );

@@ -1,6 +1,7 @@
 import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import { User } from "../model/userModel.js";
+import { GOOGLE_CALLBACK_URL } from "../utils/runtimeConfig.js";
 
 const clientID = process.env.GOOGLE_CLIENT_ID;
 const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
@@ -16,7 +17,7 @@ if (!isGoogleOAuthConfigured) {
       {
         clientID,
         clientSecret,
-        callbackURL: "/auth/google/callback",
+        callbackURL: GOOGLE_CALLBACK_URL,
       },
       async (accessToken, refreshToken, profile, done) => {
         try {

@@ -2,6 +2,7 @@ import express from "express";
 import * as authController from "../controller/authController.js";
 import passport from "passport";
 import { isGoogleOAuthConfigured } from "../config/passport.js";
+import { FRONTEND_URL, isProduction } from "../utils/runtimeConfig.js";
 
 const Router = express.Router();
 const requireGoogleOAuth = (req, res, next) => {
@@ -30,7 +31,7 @@ Router.get(
   requireGoogleOAuth,
   passport.authenticate("google", {
     session: false,
-    failureRedirect: "http://localhost:5173/login",
+    failureRedirect: `${FRONTEND_URL}/login`,
   }),
   async (req, res) => {
     const token = req.user.generateAuthToken();
@@ -38,12 +39,10 @@ Router.get(
     await req.user.save({ validateBeforeSave: false });
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
+      secure: isProduction,
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
-    res.redirect(
-      `http://localhost:5173/oauth-success?token=${encodeURIComponent(token)}`,
-    );
+    res.redirect(`${FRONTEND_URL}/oauth-success?token=${encodeURIComponent(token)}`);
   },
 );
 
