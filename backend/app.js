@@ -24,7 +24,9 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
-
+app.get("/", (req, res) => {
+  res.status(200).send("Backend is running");
+});
 app.use("/auth", authRouter);
 app.use("/application", protect, applicationRouter);
 // app.use("/user", protect, userRouter);
